@@ -3,17 +3,18 @@ import git from "/Git.png";
 import linked from "/Linked.png";
 import telegram from "/Telegram.png";
 import insta from "/Insta.png";
+import user from '/user.jpg';
 
 const Intro = () => {
-    const socials = [ // TODO: Add links to socials
-        { name: "Telegram", src: telegram },
-        { name: "LinkedIn", src: linked },
-        { name: "GitHub", src: git },
-        { name: "Instagram", src: insta },
+    const socials = [
+        { name: "Telegram", src: telegram, link: 'https://t.me/yarutiun' },
+        { name: "LinkedIn", src: linked, link: 'https://www.linkedin.com/in/yurii-arutiunov-348719224/' },
+        { name: "GitHub", src: git, link: 'https://github.com/yarutiun' },
+        { name: "Instagram", src: insta, link: 'https://www.instagram.com/rezanyi_metaluga/' },
     ];
   return (
-    <section className="flex shrink justify-center p-44 md:p-36 sm:p-24 gap-20">
-      <main className="">
+    <section id="home" className="flex shrink justify-center pt-44 md:pt-36 sm:pt-24 gap-20 md:pb-16 sm:pb-14">
+      <main>
         <h5 className="font-semibold text-base">Hi, I am</h5>
         <h3 className="text-2xl text-orange-400 font-semibold">
           Yura Arutiunov
@@ -26,13 +27,13 @@ const Intro = () => {
       </main>
       <aside>
         <img
-          className="w-full max-w-xs sm:max-w-[200px] h-auto object-contain"
-          src="/user.png"
+          className="w-full max-w-sm sm:max-w-[300px] h-auto object-contain rounded-3xl"
+          src={user}
           alt="Yura Photo"
         />
-        <div className="flex justify-center gap-5 mt-5">
+        <div className="flex justify-center gap-5 mt-3 mr-1">
             {socials.map((social) => (
-                <a href="" className="cursor-pointer">
+                <a target="_blank" href={social.link} className="cursor-pointer">
                     <img className="w-8 h-8 sm:w-6 sm:h-6 object-contain" src={social.src} alt={social.name} />
                 </a>
             ))}
