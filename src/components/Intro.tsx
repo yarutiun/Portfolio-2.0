@@ -34,7 +34,7 @@ const Intro = () => {
         <div className="flex justify-center gap-5 mt-3 mr-1">
             {socials.map((social) => (
                 <a target="_blank" href={social.link} className="cursor-pointer">
-                    <img className="w-8 h-8 sm:w-6 sm:h-6 object-contain" src={social.src} alt={social.name} />
+                    <img className="w-8 h-8 sm:w-6 sm:h-6 object-contain hover:scale-110" src={social.src} alt={social.name} />
                 </a>
             ))}
         </div>

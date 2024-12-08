@@ -1,4 +1,4 @@
-import user from "/user.png";
+import user from "/user.jpg";
 
 const About = () => {
   const skills = [
@@ -12,7 +12,7 @@ const About = () => {
     <section className="flex shrink justify-center gap-40" id="about">
       <aside>
         <img
-          className="w-full max-w-sm sm:max-w-[300px] h-auto object-contain"
+          className="w-full max-w-sm sm:max-w-[300px] h-auto rounded-3xl object-contain"
           src={user}
           alt="Yura Photo"
         />
