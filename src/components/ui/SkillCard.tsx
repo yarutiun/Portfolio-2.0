@@ -1,17 +1,12 @@
-
 interface SkillCardProps {
-    name: string;
-    desc: string;
-    icon: string;
+  name: string;
+  desc: string;
+  icon: string;
 }
 
-const SkillCard = ({
-  name,
-  desc,
-  icon,
-}: SkillCardProps) => {
+const SkillCard = ({ name, desc, icon }: SkillCardProps) => {
   return (
-    <div className="bg-gray-100 cursor-pointer box-border rounded-md max-w-60 w-60 h-60 p-5 flex flex-col items-center text-center shadow-lg hover:bg-gray-200 transition-colors duration-300">
+    <div className="bg-gray-100 cursor-pointer box-border rounded-md w-60 sm:w-48 md:w-60 h-auto p-5 flex flex-col items-center text-center shadow-lg hover:bg-gray-200 transition-colors duration-300">
       <img
         src={icon}
         alt={`${name} icon`}

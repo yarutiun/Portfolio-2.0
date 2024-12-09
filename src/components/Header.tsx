@@ -18,7 +18,7 @@ const Header = () => {
             {headerLinks.map((link) => (
                 <li key={link.name} className="inline-block cursor-pointer hover:text-orange-500"><a href={`#${link.href}`}>{link.name}</a></li>
             ))}
-            <li className="inline-block box-border shadow-md bg-orange-500 rounded cursor-pointer py-0.5 px-1">
+            <li className="inline-block box-border shadow-md bg-orange-500 rounded cursor-pointer py-0.5 px-1 hover:bg-orange-400">
                 <a href="/Yurii_Arutiunov_CV.pdf" download="Yurii_Arutiunov_CV.pdf">Download CV</a>
             </li>
         </ul>
