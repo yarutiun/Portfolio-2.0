@@ -22,6 +22,10 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          VITE_PUB: ${{ secrets.VITE_PUB }}
+          VITE_SERVICE: ${{ secrets.VITE_SERVICE }}
+          VITE_TEMP: ${{ secrets.VITE_TEMP }}
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
