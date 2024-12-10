@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -6,16 +7,42 @@ const ContactSection = () => {
     email: '',
     message: '',
   });
+  const service_id = import.meta.env.VITE_SERVICE;
+  const template_id = import.meta.env.VITE_TEMP;
+  const public_key = import.meta.env.VITE_PUB;
+  const [isSending, setIsSending] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSending(true);
 
-    alert('Thank you for reaching out! I’ll get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message,
+    };
+
+    try {
+      await emailjs.send(
+        service_id,
+        template_id,
+        templateParams,
+        public_key
+      );
+      setSuccess(true);
+      alert('Thank you for reaching out! Your message has been sent.');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      alert('Failed to send your message. Please try again later.');
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -56,11 +83,15 @@ const ContactSection = () => {
         />
         <button
           type="submit"
-          className="bg-orange-500 text-white px-6 py-2 rounded-md font-semibold hover:bg-orange-600 transition-colors duration-300"
+          className={`bg-orange-500 text-white px-6 py-2 rounded-md font-semibold hover:bg-orange-600 transition-colors duration-300 ${
+            isSending ? 'opacity-50 cursor-not-allowed' : ''
+          }`}
+          disabled={isSending}
         >
-          Send Message
+          {isSending ? 'Sending...' : 'Send Message'}
         </button>
       </form>
+      {success && <p className="text-green-500 mt-4 text-center">Your message has been sent successfully!</p>}
     </section>
   );
 };
