@@ -8,3 +8,39 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+
+.wave-text {
+    position: relative;
+    display: inline-block;
+    color: #000;
+    overflow: hidden;
+}
+
+.wave-text::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: transparent;
+    background: linear-gradient(90deg, #FF5733, #FFBD33, #33FF57);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    animation: wave 5s ease-in-out infinite;
+}
+
+/* Анимация для волны */
+@keyframes wave {
+    0% {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+    50% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    100% {
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
+}

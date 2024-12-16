@@ -12,7 +12,7 @@ const headerLinks = [
 const Header = () => {
   return (
     <header className="flex justify-around items-center p-5">
-    <h1 className="text-xl">Yura Arutiunov</h1>
+    <h1 className="text-xl wave-text" data-text="Yura Arutiunov">Yura Arutiunov</h1>
     <nav>
         <ul className="flex md:gap-5 sm:gap-3">
             {headerLinks.map((link) => (
