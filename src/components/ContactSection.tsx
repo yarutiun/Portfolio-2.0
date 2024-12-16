@@ -48,7 +48,7 @@ const ContactSection = () => {
   return (
     <section className="py-20 bg-white" id="contacts">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold mb-4">Let's Design Together</h2>
+        <h2 className="text-3xl font-bold mb-4">Let's Code Together!</h2>
         <p className="text-gray-600">
           Have a project in mind or want to discuss a job opportunity? Fill out the form below, and I'll get back to you soon!
         </p>
