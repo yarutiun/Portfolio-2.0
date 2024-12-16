@@ -6,11 +6,18 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import WorkExperience from './components/WorkExperience';
 import './index.css';
+import AOS from 'aos';
+
+AOS.init(
+  {
+      once: true,
+  }
+);
 
 function App() {
 
   return (
-  <div>
+  <>
     <Header />
     <Intro />
     <About />
@@ -18,7 +25,7 @@ function App() {
     <WorkExperience />
     <Projects />
     <ContactSection />
-  </div>
+  </>
   )
 }
 

@@ -3,6 +3,9 @@ import back from '/back.svg';
 import front from '/frontend.svg';
 import devops from '/devops.svg';
 import ui from '/ui.svg';
+import { motion } from 'framer-motion';
+import 'aos/dist/aos.css';
+
 
 const Skills = () => {
   const skills = [
@@ -39,13 +42,23 @@ const Skills = () => {
           projects that highlight this skill in action!
         </p>
         <section className="flex justify-between pt-24 gap-16">
-          {skills.map((skill) => (
-            <SkillCard
+          {skills.map((skill, index) => (
+            <motion.div
               key={skill.name}
-              name={skill.name}
-              desc={skill.desc}
-              icon={skill.icon}
-            />
+              className="flex flex-col items-center text-center"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              data-aos="fade-right"
+              data-aos-delay={index * 100} // Stagger the animations
+              data-aos-duration="1000"
+            >
+              <SkillCard
+                key={skill.name}
+                name={skill.name}
+                desc={skill.desc}
+                icon={skill.icon}
+              />
+            </motion.div>
           ))}
         </section>
       </div>
