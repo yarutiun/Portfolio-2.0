@@ -1,4 +1,4 @@
-import user from "/user.jpg";
+import user from "/Ucode.png";
 
 const About = () => {
   const skills = [

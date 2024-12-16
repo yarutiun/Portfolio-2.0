@@ -62,6 +62,8 @@ const ContactSection = () => {
           onChange={handleInputChange}
           className="w-full px-4 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:outline-none"
           required
+          minLength={2}
+          maxLength={20}
         />
         <input
           type="email"
@@ -80,6 +82,7 @@ const ContactSection = () => {
           rows={4}
           className="w-full px-4 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:outline-none"
           required
+          minLength={10}
         />
         <button
           type="submit"
