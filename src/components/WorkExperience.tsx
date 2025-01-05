@@ -53,7 +53,7 @@ const WorkExperience = () => {
             
           >
             {/* Timeline Dot */}
-            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-teal-500 text-white flex-shrink-0 flex items-center justify-center rounded-full shadow-lg transform transition-all hover:scale-110">
+            <div className="w-16 h-16 bg-gradient-to-r from-orange-300 to-orange-500 text-white flex-shrink-0 flex items-center justify-center rounded-full shadow-lg transform transition-all hover:scale-110">
               <span className="text-xl">{index + 1}</span>
             </div>
             {/* Experience Content */}
